@@ -1,15 +1,14 @@
 import css from "../Phonebook.module.css"
-import { AiFillDelete, AiOutlineContacts } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
-import { deleteContact } from "redux/contacts/contacts-operation";
+import { AiOutlineContacts } from "react-icons/ai";
+import { useSelector } from "react-redux";
 import { getContacts } from "redux/contacts/contacts-selector";
-import { getFilter } from "redux/filter/filter-selector";
+// import { getFilter } from "redux/filter/filter-selector";
 ;
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
 //   const filter = useSelector(getFilter);
-  const dispatch = useDispatch();
+//   const dispatch = useDispatch();
 
 //   const getFiltereContacts = () => {
 //       if (!filter) {
