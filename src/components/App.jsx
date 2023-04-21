@@ -16,7 +16,6 @@ export const App = () => {
     return (
         <>
             <div className={css.form}>
-                <h1 className={css.header}>Phonebook</h1>
                 {/* <Filter /> */}
                 <ContactList/>
             </div>
