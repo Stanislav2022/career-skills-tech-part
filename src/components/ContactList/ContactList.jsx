@@ -3,7 +3,7 @@ import css from "../Phonebook.module.css"
 import { useSelector } from "react-redux";
 import { getContacts } from "redux/contacts/contacts-selector";
 import imageChat from '../../images/picture.webp'; 
-import logo from '../../images/picture.webp';
+import logo from '../../images/logo.webp';
 // import { getFilter } from "redux/filter/filter-selector";
 ;
 
@@ -34,8 +34,9 @@ export const ContactList = () => {
 
   const element = contacts.map(({avatar, user, id, tweets, followers}) => {
       return <li className={css.contacts__list} key={id}>
-          <img src={logo} width="76" height="22" alt="logo" />
-          <img src={imageChat} width="308" height="168" alt="logo" />
+          <img  src={logo} width="76" height="22" alt="logo" />
+          <img className={css.image__chat} src={imageChat} width="308" height="168" alt="logo" />
+          <div className={css.avatar__box}></div>
           <p>{tweets} TWEETS</p>
           <p>{followers} FOLLOWERS</p>
           {user}:  
