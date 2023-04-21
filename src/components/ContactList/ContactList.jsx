@@ -2,6 +2,7 @@ import css from "../Phonebook.module.css"
 // import { AiOutlineContacts } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { getContacts } from "redux/contacts/contacts-selector";
+import logo from '../../images/picture.webp'; 
 // import { getFilter } from "redux/filter/filter-selector";
 ;
 
@@ -32,7 +33,7 @@ export const ContactList = () => {
 
   const element = contacts.map(({avatar, user, id, tweets, followers}) => {
       return <li className={css.contacts__list} key={id}>
-          <img src="https://images.pexels.com/photos/58997/pexels-photo-58997.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=320" alt="two-yellow-labrador-retriever-puppies"></img>
+          <img src={logo} width="308" height="168" alt="logo" />
           <p>{tweets} TWEETS</p>
           <p>{followers} FOLLOWERS</p>
           {user}:  
