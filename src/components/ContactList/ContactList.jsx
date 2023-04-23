@@ -1,11 +1,11 @@
-import css from "../Phonebook.module.css"
+import css from "../Phonebook.module.css";
 // import { AiOutlineContacts } from "react-icons/ai";
 import { useSelector } from "react-redux";
 import { getContacts } from "redux/contacts/contacts-selector";
 import imageChat from '../../images/picture.webp'; 
 import logo from '../../images/logo.webp';
 // import { getFilter } from "redux/filter/filter-selector";
-;
+import { ButtonFollow } from "components/Button/ButtonFollow";
 
 export const ContactList = () => {
   const contacts = useSelector(getContacts);
@@ -38,13 +38,15 @@ export const ContactList = () => {
           <img className={css.image__chat} src={imageChat} width="308" height="168" alt="logo" />
           <div className={css.avatar__box}></div>
           <p className={css.text}>{tweets} TWEETS</p>
-          <p className={css.text}>{followers} FOLLOWERS</p>
+        <p className={css.text}>{followers} FOLLOWERS</p>
+        <ButtonFollow/>
             </li>
     })
   
   return (
     <>
-          <ul className={css.wrapper}>{element}</ul>
+      <ul className={css.wrapper}>{element}</ul>
+      
     </>
   )
 }
