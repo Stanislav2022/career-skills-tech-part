@@ -34,12 +34,11 @@ export const ContactList = () => {
 
   const element = contacts.map(({avatar, user, id, tweets, followers}) => {
       return <li className={css.contacts__list} key={id}>
-          <img  src={logo} width="76" height="22" alt="logo" />
+          <img className={css.logo} src={logo} width="76" height="22" alt="logo" />
           <img className={css.image__chat} src={imageChat} width="308" height="168" alt="logo" />
           <div className={css.avatar__box}></div>
-          <p>{tweets} TWEETS</p>
-          <p>{followers} FOLLOWERS</p>
-          {user}:  
+          <p className={css.text}>{tweets} TWEETS</p>
+          <p className={css.text}>{followers} FOLLOWERS</p>
             </li>
     })
   
