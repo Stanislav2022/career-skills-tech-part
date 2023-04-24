@@ -8,7 +8,7 @@ import { selectFollow } from "redux/follow/follow-selector";
 import { ButtonFollowing } from "components/Button/ButtonFollowing";
 import { ButtonFollow } from "components/Button/ButtonFollow";
 import { useState } from "react";
-import { Pagination } from "components/Pagination/Pagination";
+
 
 export const CardsList = () => {
   const cards = useSelector(selectCards);
@@ -17,10 +17,11 @@ export const CardsList = () => {
   const [cardsPerPage] = useState(3)
 
   const lastCardsIndex = currentPage * cardsPerPage;
-  const firstCardsIndex = lastCardsIndex - cardsPerPage;
-  const currentCards = cards.slice(firstCardsIndex, lastCardsIndex)
+  const currentCards = cards.slice(0, lastCardsIndex);
+
+  const nextPage = () => setCurrentPage(prev => prev + 1);
   
-  const elements = cards.map((card, i) => {
+  const elements = currentCards.map((card) => {
     if (follow.items.includes(card.user)) {
       return <li className={css.cards__list} key={card.id}>
         <img className={css.logo} src={logo} width="76" height="22" alt="logo" />
@@ -48,11 +49,11 @@ export const CardsList = () => {
 })
   
   return (
-    <div className={css.cards__container}>
+    <div >
       <ul className={css.wrapper}>
         {elements}
       </ul>
-      <Pagination cardsPerPage={cardsPerPage} />
+      <button onClick={nextPage}>Load more</button>
     </div>
   )
 }
