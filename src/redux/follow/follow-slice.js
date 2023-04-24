@@ -8,9 +8,7 @@ const followSlice = createSlice({
       state.items.push(action.payload);
     },
     removeFollow(state, action) {
-      console.log(action.payload);
       const arr = state.items.filter(e => e !== action.payload);
-      console.log(arr);
       state.items = arr;
     },
   },

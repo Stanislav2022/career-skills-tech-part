@@ -1,1 +1,1 @@
-export const getFollow = state => state.follow;
+export const selectFollow = state => state.follow;
