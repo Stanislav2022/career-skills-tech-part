@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { fetchContacts } from "redux/contacts/contacts-operation";
+import { fetchContacts } from "redux/cards/cards-operation";
 import { useEffect } from "react";
 import css from "./Phonebook.module.css";
 import { ContactList } from './ContactList/ContactList';

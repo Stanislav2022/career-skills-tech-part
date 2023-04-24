@@ -1,1 +1,1 @@
-export const getFollow = store => store.follow;
+export const getFollow = state => state.follow;
