@@ -20,8 +20,8 @@ export default function Cards() {
     fetchCards();
 
   return (
-            <div tyle={styles.form}>
-                <CardsList />
-            </div>
-  );
+    <div tyle={styles.form}>
+        <CardsList />
+    </div>
+);
 }

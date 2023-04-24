@@ -4,7 +4,6 @@ import { Suspense } from 'react';
 
 export const Layout = () => {
     return (
-      
     <div>
         <AppBar/>
         <Suspense fallback={null}>

@@ -4,10 +4,12 @@
 }
 .wrapper{
     display: grid;
+    justify-items: center;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 48px;
     grid-row-gap: 48px;
     border-radius: 10px;
+    padding: 0px;
 
 }
 .cards__list {
