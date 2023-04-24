@@ -10,8 +10,9 @@ import {
   REGISTER,
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
-import { followReducer } from './follow/follow-slice';
+
 import { cardsReducer } from './cards/cards-slice';
+import { followReducer } from './follow/follow-slice';
 // import { filterReducer } from './filter/filter-slice';
 
 const middleware = [
@@ -31,7 +32,6 @@ export const store = configureStore({
   reducer: {
     follow: persistReducer(followPersistConfig, followReducer),
     cards: cardsReducer,
-    // filter: filterReducer,
   },
   middleware,
 });

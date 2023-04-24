@@ -5,6 +5,7 @@ import imageChat from '../../images/picture.webp';
 import logo from '../../images/logo.webp';
 import { getFollow } from "redux/follow/follow-selector";
 // import { getFilter } from "redux/filter/filter-selector";
+import { ButtonFollowing } from "components/Button/ButtonFollowing";
 import { ButtonFollow } from "components/Button/ButtonFollow";
 
 export const CardsList = () => {
@@ -45,6 +46,7 @@ export const CardsList = () => {
             <div className={css.avatar__box}></div>
             <p className={css.text}>{tweets} TWEETS</p>
             <p className={css.text}>{followers} FOLLOWERS</p>
+            <ButtonFollowing user={user} />
             <ButtonFollow user={user} />
           </li>
         ))}

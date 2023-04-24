@@ -1,26 +1,18 @@
-import { createSlice, nanoid } from '@reduxjs/toolkit';
-
-const followInitialState = [];
+import { createSlice } from '@reduxjs/toolkit';
 
 const followSlice = createSlice({
   name: 'follow',
-  initialState: followInitialState,
+  initialState: { items: [] },
   reducers: {
-    addFollow: {
-      reducer(state, action) {
-        state.push(action.payload);
-      },
-      prepare(text) {
-        return {
-          payload: {
-            text,
-            id: nanoid(),
-          },
-        };
-      },
+    addFollow(state, action) {
+      state.items.push(action.payload);
     },
-    removeFollow: (store, { payload }) =>
-      store.filter(({ id }) => id !== payload),
+    removeFollow(state, action) {
+      console.log(action.payload);
+      const arr = state.items.filter(e => e !== action.payload);
+      console.log(arr);
+      state.items = arr;
+    },
   },
 });
 
