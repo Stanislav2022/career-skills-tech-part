@@ -17,18 +17,22 @@ export const CardsList = () => {
       return <li className={css.cards__list} key={card.id}>
         <img className={css.logo} src={logo} width="76" height="22" alt="logo" />
         <img className={css.image__chat} src={imageChat} width="308" height="168" alt="logo" />
-        <div className={css.avatar__box}></div>
+        <div className={css.avatar__box}>
+          <img src={card.avatar} alt="avatar" width="60"/>
+        </div>
         <p className={css.text}>{card.tweets} TWEETS</p>
-        <p className={css.text}>{card.followers} FOLLOWERS</p>
+        <p className={css.text}>{card.followers.toLocaleString('en')} FOLLOWERS</p>
         <ButtonFollowing card={card} />
       </li>
     }
       return <li className={css.cards__list} key={card.id}>
         <img className={css.logo} src={logo} width="76" height="22" alt="logo" />
         <img className={css.image__chat} src={imageChat} width="308" height="168" alt="logo" />
-        <div className={css.avatar__box}></div>
+        <div className={css.avatar__box}>
+          <img src={card.avatar} alt="avatar"/>
+        </div>
         <p className={css.text}>{card.tweets} TWEETS</p>
-        <p className={css.text}>{card.followers} FOLLOWERS</p>
+        <p className={css.text}>{card.followers.toLocaleString('en')} FOLLOWERS</p>
         <ButtonFollow card={card} />
       </li>
 })
