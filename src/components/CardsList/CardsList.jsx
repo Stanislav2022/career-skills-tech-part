@@ -17,7 +17,7 @@ export const CardsList = () => {
       return <li className={css.cards__list} key={card.id}>
         <img className={css.logo} src={logo} width="76" height="22" alt="logo" />
         <img className={css.image__chat} src={imageChat} width="308" height="168" alt="imageChat" />
-        <img className={css.image__rectangle} src={rectangle} width="308" height="8" alt="rectangle" />
+        <img className={css.image__rectangle} src={rectangle} width="380" height="18" alt="rectangle" />
         <div className={css.avatar__box}>
           <img src={card.avatar} alt="avatar" width="60"/>
         </div>
@@ -29,7 +29,7 @@ export const CardsList = () => {
       return <li className={css.cards__list} key={card.id}>
         <img className={css.logo} src={logo} width="76" height="22" alt="logo" />
         <img className={css.image__chat} src={imageChat} width="308" height="168" alt="logo" />
-        <img className={css.image__rectangle} src={rectangle} width="380" height="18" alt="rectangle" />
+         <img className={css.image__rectangle} src={rectangle} width="380" height="18" alt="rectangle" />
         <div className={css.avatar__box}>
           <img src={card.avatar} alt="avatar"/>
         </div>
