@@ -1,27 +1,27 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts } from './cards-operation';
+import { fetchCards } from './cards-operation';
 
-const contactsSlice = createSlice({
-  name: 'contacts',
+const cardsSlice = createSlice({
+  name: 'cards',
   initialState: {
     items: [],
     isLoading: false,
     error: null,
   },
   extraReducers: {
-    [fetchContacts.pending]: store => {
+    [fetchCards.pending]: store => {
       store.isLoading = true;
     },
-    [fetchContacts.fulfilled]: (state, { payload }) => {
+    [fetchCards.fulfilled]: (state, { payload }) => {
       state.isLoading = false;
       state.error = null;
       state.items = payload;
     },
-    [fetchContacts.rejected]: (state, { payload }) => {
+    [fetchCards.rejected]: (state, { payload }) => {
       state.isLoading = false;
       state.error = payload;
     },
   },
 });
 
-export const contactReducer = contactsSlice.reducer;
+export const cardsReducer = cardssSlice.reducer;
