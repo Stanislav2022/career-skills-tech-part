@@ -9,8 +9,20 @@ import { ButtonFollowing } from "components/Button/ButtonFollowing";
 import { ButtonFollow } from "components/Button/ButtonFollow";
 
 export const CardsList = () => {
-  const cards = useSelector(selectCards);
+  const users = useSelector(selectCards);
   const follow = useSelector(selectFollow);
+  let pageNumber = 1;
+  let cardsOnPage = 3;
+  // let cardsDivide = [];
+  // for (let i = 0; i <Math.ceil(users.length/cardsOnPage); i++){
+  //     cardsDivide[i] = users.slice((i*cardsOnPage), (i*cardsOnPage) + cardsOnPage);
+  // }
+
+  let cards = users.slice(pageNumber - 1, cardsOnPage * pageNumber);
+  
+  
+  const loadeMore = () => pageNumber = pageNumber + 1;
+
 
   const elements = cards.map((card) => {
     if (follow.items.includes(card.user)) {
@@ -40,11 +52,12 @@ export const CardsList = () => {
 })
   
   return (
-    <>
+    <div className={css.cards__container}>
       <ul className={css.wrapper}>
         {elements}
       </ul>
+      <button onClick={loadeMore}>load more</button>
       
-    </>
+    </div>
   )
 }
