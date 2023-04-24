@@ -1,4 +1,3 @@
-import css from "../App.module.css";
 import { useSelector } from "react-redux";
 import { selectCards } from "redux/cards/cards-selector";
 import { CurrentCards } from "components/CurrentCards/CurrentCards";
