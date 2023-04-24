@@ -1,23 +1,23 @@
 import { useDispatch } from 'react-redux';
-import { fetchContacts } from "redux/cards/cards-operation";
+import { fetchCards } from "redux/cards/cards-operation";
 import { useEffect } from "react";
-import css from "./Phonebook.module.css";
-import { ContactList } from './ContactList/ContactList';
+import css from "./App.module.css";
+import { CardsList } from './CardsList/CardsList';
 // import { Filter } from './Filter/Filter';
 
 export const App = () => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchContacts())
+        dispatch(fetchCards())
     }, [dispatch]);
-    fetchContacts();
+    fetchCards();
 
     return (
         <>
             <div className={css.form}>
                 {/* <Filter /> */}
-                <ContactList/>
+                <CardsList/>
             </div>
        </>
     )

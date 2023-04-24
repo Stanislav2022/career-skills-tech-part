@@ -1,4 +1,4 @@
-import css from "../Phonebook.module.css";
+import css from "../App.module.css";
 import { useSelector } from "react-redux";
 import { getCards } from "redux/cards/cards-selector";
 import imageChat from '../../images/picture.webp'; 
@@ -7,7 +7,7 @@ import { getFollow } from "redux/follow/follow-selector";
 // import { getFilter } from "redux/filter/filter-selector";
 import { ButtonFollow } from "components/Button/ButtonFollow";
 
-export const CardstList = () => {
+export const CardsList = () => {
   const cards = useSelector(getCards);
   const follow = useSelector(getFollow);
 

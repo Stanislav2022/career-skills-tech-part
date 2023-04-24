@@ -24,4 +24,4 @@ const cardsSlice = createSlice({
   },
 });
 
-export const cardsReducer = cardssSlice.reducer;
+export const cardsReducer = cardsSlice.reducer;
