@@ -11,7 +11,7 @@ const styles = {
     }
 }
 
-export default function Cards() {
+export default function Tweets() {
    const dispatch = useDispatch();
 
     useEffect(() => {

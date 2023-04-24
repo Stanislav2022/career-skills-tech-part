@@ -8,8 +8,8 @@ export const AppBar = () => {
           <NavLink  to="/">
               <h2 className={css.button__header}>Home</h2>
           </NavLink>
-          <NavLink to="/cards">
-              <h2 className={css.button__header}>Cards</h2>
+          <NavLink to="/tweets">
+              <h2 className={css.button__header}>Tweets</h2>
           </NavLink>
         </header>
   );
