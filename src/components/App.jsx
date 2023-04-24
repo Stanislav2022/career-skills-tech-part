@@ -1,23 +1,23 @@
+import { lazy } from 'react';
 import { useDispatch } from 'react-redux';
-import { fetchCards } from "redux/cards/cards-operation";
-import { useEffect } from "react";
-import css from "./App.module.css";
-import { CardsList } from './CardsList/CardsList';
+import { Routes, Route } from "react-router-dom";
+import { Layout } from './Layout';
+
+const HomePage = lazy(() => import('../pages/Home'))
+const CardsPage = lazy(() => import("../pages/Cards"));
 
 export const App = () => {
     const dispatch = useDispatch();
 
-    useEffect(() => {
-        dispatch(fetchCards())
-    }, [dispatch]);
-    fetchCards();
-
     return (
         <>
-            <div className={css.form}>
-                <CardsList />
-            </div>
-       </>
+        <Routes>
+            <Route path="/" element={<Layout />}>
+                <Route index element={<HomePage />} />
+                <Route path="/cards" element={<CardsPage />} />
+            </Route>   
+        </Routes>
+      </>
     )
 }
 
