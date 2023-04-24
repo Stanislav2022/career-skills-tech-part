@@ -1,24 +1,26 @@
-import { useSelector } from "react-redux";
-import { selectCards } from "redux/cards/cards-selector";
+import React from 'react'
+import { useSelector } from 'react-redux';
+import { selectCards } from 'redux/cards/cards-selector';
 
-
-export const PaginatedItems = ( ) => {
-    const cards = useSelector(selectCards);
-    let cardsOnPage = 3;
-    let cardsDivide = [];
-    for (let i = 0; i <Math.ceil(cards.length/cardsOnPage); i++){
-        cardsDivide[i] = cards.slice((i*cardsOnPage), (i*cardsOnPage) + cardsOnPage);
+export const Pagination = ({ cardsPerPage }) => {
+  const cards = useSelector(selectCards);
+    const totalCards = cards.lenght;
+    const pageNumbers = [];
+    for (let i = 1; i <= Math.ceil(totalCards / cardsPerPage); i++) {
+        pageNumbers.push(i)
     }
-    console.log(cardsDivide)
-    
-
-
-    
-
   return (
-      <>
-          
-    </>
-  );
+      <div>
+          <ul>
+              {pageNumbers.map(number => (
+                  <li key={number}>
+                      <a href="!#">
+                          {number}
+                      </a>
+                  </li>
+              ))}
+          </ul>
+      </div>
+  )
 }
 

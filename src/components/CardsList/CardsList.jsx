@@ -7,24 +7,20 @@ import rectangle from '../../images/rectangle.webp';
 import { selectFollow } from "redux/follow/follow-selector";
 import { ButtonFollowing } from "components/Button/ButtonFollowing";
 import { ButtonFollow } from "components/Button/ButtonFollow";
+import { useState } from "react";
+import { Pagination } from "components/Pagination/Pagination";
 
 export const CardsList = () => {
-  const users = useSelector(selectCards);
+  const cards = useSelector(selectCards);
   const follow = useSelector(selectFollow);
-  let pageNumber = 1;
-  let cardsOnPage = 3;
-  // let cardsDivide = [];
-  // for (let i = 0; i <Math.ceil(users.length/cardsOnPage); i++){
-  //     cardsDivide[i] = users.slice((i*cardsOnPage), (i*cardsOnPage) + cardsOnPage);
-  // }
+  const [currentPage, setCurrentPage] = useState(1)
+  const [cardsPerPage] = useState(3)
 
-  let cards = users.slice(pageNumber - 1, cardsOnPage * pageNumber);
+  const lastCardsIndex = currentPage * cardsPerPage;
+  const firstCardsIndex = lastCardsIndex - cardsPerPage;
+  const currentCards = cards.slice(firstCardsIndex, lastCardsIndex)
   
-  
-  const loadeMore = () => pageNumber = pageNumber + 1;
-
-
-  const elements = cards.map((card) => {
+  const elements = cards.map((card, i) => {
     if (follow.items.includes(card.user)) {
       return <li className={css.cards__list} key={card.id}>
         <img className={css.logo} src={logo} width="76" height="22" alt="logo" />
@@ -56,8 +52,7 @@ export const CardsList = () => {
       <ul className={css.wrapper}>
         {elements}
       </ul>
-      <button onClick={loadeMore}>load more</button>
-      
+      <Pagination cardsPerPage={cardsPerPage} />
     </div>
   )
 }
