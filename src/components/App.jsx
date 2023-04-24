@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import { Layout } from './Layout';
 
 const HomePage = lazy(() => import('../pages/Home'))
-const CardsPage = lazy(() => import("../pages/Cards"));
+const TweetsPage = lazy(() => import("../pages/Tweets"));
 
 export const App = () => {
 
@@ -11,7 +11,7 @@ export const App = () => {
         <Routes>
             <Route path="/" element={<Layout />}>
                 <Route index element={<HomePage />} />
-                <Route path="/cards" element={<CardsPage />} />
+                <Route path="/tweets" element={<TweetsPage />} />
             </Route>   
         </Routes>
     )
