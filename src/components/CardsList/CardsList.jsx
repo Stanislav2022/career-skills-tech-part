@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import { selectCards } from "redux/cards/cards-selector";
 import { CurrentCards } from "components/CurrentCards/CurrentCards";
 import { useState } from "react";
+import {ButtonLoadMore} from '../Button/ButtonLoadMore'
 
 
 export const CardsList = () => {
@@ -16,7 +17,7 @@ export const CardsList = () => {
   return (
     <div >
       <CurrentCards currentCards={currentCards} />
-      <button onClick={nextPage}>Load more</button>
+      {currentCards && lastCardsIndex < cards.length ? (<ButtonLoadMore onClick={nextPage} />) : ('')}
     </div>
   )
 }

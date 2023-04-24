@@ -1,18 +1,8 @@
 import React from 'react'
-import { useDispatch } from 'react-redux';
-import { addFollow } from 'redux/follow/follow-slice';
-import { addFolowers } from 'redux/cards/cards-operation';
 import css from "../Button/Button.module.css";
 
-
-
-export const ButtonFollow = ({card}) => {
-    const dispatch = useDispatch();
-  const onFollow = () => {
-    dispatch(addFollow(card.user));
-    dispatch(addFolowers(card));
-  };
+export const ButtonLoadMore = ({onClick}) => {
     return (
-      <button className={css.button__vote} onClick={onFollow} type = "button" name = "button">Follow</button>
+      <button className={css.button__vote} onClick={onClick} type="button" name="button">Load more</button>
   )
 }
