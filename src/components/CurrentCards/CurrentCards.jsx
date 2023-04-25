@@ -22,9 +22,9 @@ export const CurrentCards = () => {
   let filteredCard = cards;
   function visibleCard(filter) {
     if (filter === statusFilters.follow) {
-       filteredCard = cards.filter(card => follow.items.includes(card.user))
+       filteredCard = cards.filter(card => !follow.items.includes(card.user))
     } else if (filter === statusFilters.following) {
-      filteredCard = cards.filter(card => !follow.items.includes(card.user))
+      filteredCard = cards.filter(card => follow.items.includes(card.user))
     } else {
       filteredCard = cards
     }
