@@ -9,7 +9,7 @@ export const ButtonFilter = ({
 }) => {
   return (
     <button
-      className={clsx(css.button__vote, {
+      className={clsx(css.button__filter, {
         [css.isSelected]: selected
       })}
       type={type}

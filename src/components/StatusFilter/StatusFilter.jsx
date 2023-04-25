@@ -8,8 +8,6 @@ import css from "./StatusFilter.module.css";
 export const StatusFilter = () => {
   const dispatch = useDispatch();
   const filter = useSelector(selectStatusFilter);
-
-
   const handleFilterChange = filter => dispatch(setStatusFilter(filter));
 
   return (

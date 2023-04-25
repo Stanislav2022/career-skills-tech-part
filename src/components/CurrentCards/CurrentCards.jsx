@@ -8,6 +8,7 @@ import { useState } from "react";
 import { ButtonLoadMore } from '../Button/ButtonLoadMore'
 import { ButtonFollowing } from "components/Button/ButtonFollowing";
 import { ButtonFollow } from "components/Button/ButtonFollow";
+import { statusFilters } from "redux/filter/constants";
 import imageChat from '../../images/picture.webp'; 
 import logo from '../../images/logo.webp';
 import rectangle from '../../images/rectangle.webp';
@@ -18,16 +19,22 @@ export const CurrentCards = () => {
   const follow = useSelector(selectFollow);
   const filter = useSelector(selectStatusFilter)
 
+  let filteredCard = cards;
+  function visibleCard(filter) {
+    if (filter === statusFilters.follow) {
+       filteredCard = cards.filter(card => follow.items.includes(card.user))
+    } else if (filter === statusFilters.following) {
+      filteredCard = cards.filter(card => !follow.items.includes(card.user))
+    } else {
+      filteredCard = cards
+    }
+  }
+  visibleCard(filter)
+
   const [currentPage, setCurrentPage] = useState(1)
   const [cardsPerPage] = useState(3)
-
-  const visibleCardFollow = cards.filter(card => follow.items.includes(card.user))
-  const visibleCardFollowing = cards.filter(card => !follow.items.includes(card.user))
-   console.log(visibleCardFollow);
-   console.log(visibleCardFollowing);
- 
   const lastCardsIndex = currentPage * cardsPerPage;
-  const currentCards = cards.slice(0, lastCardsIndex);
+  const currentCards = filteredCard.slice(0, lastCardsIndex);
   const nextPage = () => setCurrentPage(prev => prev + 1);
 
   const elements = currentCards.map((card) => {
@@ -44,17 +51,15 @@ export const CurrentCards = () => {
               <p className={css.text}>{card.followers.toLocaleString('en')} FOLLOWERS</p>
               {!bul && <ButtonFollow card={card} />}
               {bul && <ButtonFollowing card={card} />}
-        </li>
-  )
+        </li>)
     })
   
-
   return (
     <div>
       <ul className={css.wrapper}>
         {elements}
       </ul>
-      {currentCards && lastCardsIndex < cards.length ? (<ButtonLoadMore onClick={nextPage} />) : ('')}
+      {currentCards && lastCardsIndex < filteredCard.length ? (<ButtonLoadMore onClick={nextPage} />) : ('')}
     </div>
   )
 }
