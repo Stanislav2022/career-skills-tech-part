@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkcareer_skills_tech_part=self.webpackChunkcareer_skills_tech_part||[]).push([[415],{415:function(e,t,n){n.r(t),n.d(t,{default:function(){return r}});var i=n(329),l={container:{minHeight:"calc(100vh - 300px)",display:"flex",alignItems:"center",justifyContent:"center"},title:{fontWeight:500,fontSize:48,textAlign:"center"}};function r(){return(0,i.jsx)("div",{style:l.container,children:(0,i.jsx)("h1",{style:l.title,children:"Hello"})})}}}]);
+//# sourceMappingURL=415.383f833d.chunk.js.map

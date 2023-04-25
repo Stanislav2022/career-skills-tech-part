@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/career-skills-tech-part/static/css/main.e66d00b9.css",
+    "main.js": "/career-skills-tech-part/static/js/main.e9d0385a.js",
+    "static/js/415.383f833d.chunk.js": "/career-skills-tech-part/static/js/415.383f833d.chunk.js",
+    "static/css/637.c7fc6a49.chunk.css": "/career-skills-tech-part/static/css/637.c7fc6a49.chunk.css",
+    "static/js/637.f8c839ef.chunk.js": "/career-skills-tech-part/static/js/637.f8c839ef.chunk.js",
+    "static/media/picture.webp": "/career-skills-tech-part/static/media/picture.4af58b6f2a8e3a13d017.webp",
+    "static/media/rectangle.webp": "/career-skills-tech-part/static/media/rectangle.8a639d72c92e8b707a9b.webp",
+    "index.html": "/career-skills-tech-part/index.html",
+    "static/media/logo.webp": "/career-skills-tech-part/static/media/logo.f508894fce1c8ed0b1aa.webp",
+    "main.e66d00b9.css.map": "/career-skills-tech-part/static/css/main.e66d00b9.css.map",
+    "main.e9d0385a.js.map": "/career-skills-tech-part/static/js/main.e9d0385a.js.map",
+    "415.383f833d.chunk.js.map": "/career-skills-tech-part/static/js/415.383f833d.chunk.js.map",
+    "637.c7fc6a49.chunk.css.map": "/career-skills-tech-part/static/css/637.c7fc6a49.chunk.css.map",
+    "637.f8c839ef.chunk.js.map": "/career-skills-tech-part/static/js/637.f8c839ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e66d00b9.css",
+    "static/js/main.e9d0385a.js"
+  ]
+}
