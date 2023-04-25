@@ -1,6 +1,7 @@
 import { createSelector } from '@reduxjs/toolkit';
 import { statusFilters } from './constants';
 
+export const selectCards = state => state.cards.items;
 export const selectStatusFilter = state => state.filters.status;
 
 export const selectVisibleCards = createSelector(
